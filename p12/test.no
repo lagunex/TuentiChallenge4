@@ -1,0 +1,10 @@
+Line 1  [OK!]  : Case #1: 11
+Line 2  [OK!]  : Case #2: ERROR
+Line 3  [OK!]  : Case #3: 14
+Line 4  [OK!]  : Case #4: 16
+Line 5  [OK!]  : Case #5: 9
+Line 6  [OK!]  : Case #6: 10
+Line 7  [OK!]  : Case #7: 10
+Line 8  [OK!]  : Case #8: 11
+Line 9  [OK!]  : Case #9: 14
+Line 10 [WRONG] : Case #10: 19
