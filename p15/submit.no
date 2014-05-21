@@ -1,0 +1,2 @@
+Line 1 [WRONG] : Impossible
+Line 2  [OK!]  : Impossible

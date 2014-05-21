@@ -8,15 +8,6 @@ OOOXXOO.
 .OXXXXOO
 .OXXXXXO
 OOXOOO..
-White in 3
-...O....
-..OO....
-..OOOO.O
-OOOOOOO.
-OOOOOOOO
-OOOOOOOO
-OOOOOO..
-O.OOOO..
 White in 2
 ...O.O..
 O.XOXO..
@@ -26,15 +17,6 @@ OXXXXOOO
 X.XXXXXO
 ..OOXX..
 .OO...X.
-White in 3
-.XXX..X.
-..XXXX..
-OXXXXX..
-OOXOXX..
-OOOOOXX.
-OOOOXXX.
-OOOOXX..
-OOOOX...
 Black in 2
 ........
 ........
@@ -44,15 +26,6 @@ XXXOXOOO
 XXOXXO..
 X.XOOO..
 ..XXX...
-Black in 3
-OO..OOO.
-.OOOXO.O
-.OOXXXOO
-.OOOOXOO
-.OXXXXOO
-OOXXXXOO
-O.OOOOOO
-.OO..OOO
 White in 2
 .X......
 .XX.....
@@ -62,15 +35,6 @@ White in 2
 .OOOOXXX
 ..XXOX.X
 .X..XX..
-White in 4
-........
-........
-........
-...OX...
-...XO...
-........
-........
-........
 Black in 2
 ..XXXX..
 ..XOOO.O
@@ -80,6 +44,42 @@ OOXXOOOO
 OOXOOOO.
 ..OOOO..
 ...X.OO.
+White in 3
+...O....
+..OO....
+..OOOO.O
+OOOOOOO.
+OOOOOOOO
+OOOOOOOO
+OOOOOO..
+O.OOOO..
+White in 3
+.XXX..X.
+..XXXX..
+OXXXXX..
+OOXOXX..
+OOOOOXX.
+OOOOXXX.
+OOOOXX..
+OOOOX...
+Black in 3
+OO..OOO.
+.OOOXO.O
+.OOXXXOO
+.OOOOXOO
+.OXXXXOO
+OOXXXXOO
+O.OOOOOO
+.OO..OOO
+White in 4
+........
+........
+........
+...OX...
+...XO...
+........
+........
+........
 Black in 3
 .OOOOO..
 O.OOO...

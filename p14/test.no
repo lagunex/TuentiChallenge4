@@ -1,5 +1,0 @@
-Line 1  [OK!]  : 20
-Line 2  [OK!]  : 15
-Line 3  [OK!]  : 49
-Line 4  [OK!]  : 53
-Line 5 [WRONG] : 25

@@ -44,10 +44,10 @@ for c in range(cities):
     capacity = speeds[road_type]*int(lanes)*200
     g.add_edge(r, node_from, node_to, capacity)
   
-  g.add_vertex('__source__')
-  g.add_vertex('__sink__')
-  r += 1
-  g.add_edge(r,'__source__',city_name,999999)
-  r += 1
-  g.add_edge(r,'AwesomeVille','__sink__',999999)
-  print city_name, g.max_flow('__source__','__sink__')
+  #g.add_vertex('__source__')
+  #g.add_vertex('__sink__')
+  #r += 1
+  #g.add_edge(r,'__source__',city_name,999999)
+  #r += 1
+  #g.add_edge(r,'AwesomeVille','__sink__',999999)
+  print city_name, g.max_flow(city_name,'AwesomeVille')

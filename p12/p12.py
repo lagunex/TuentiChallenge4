@@ -11,22 +11,22 @@ def h(begin, end):
   '''
   return abs(begin[0]-end[0]) + abs(begin[1]-end[1])
 
-def neighbors(matrix, rows, columns, current, direction=NONE):
-  '''neighbors(matrix, rows, columns, (row,column), direction) -> iterator
+def neighbors(matrix, rows, columns, current):
+  '''neighbors(matrix, rows, columns, (row,column,direction)) -> iterator
 
      Return an enumerate object with the two possible neighbors of
      the current node, depending on the direction it is going. At the
      beginning (direction==NONE), all for directions are possible
   '''
-  (r,c) = current
+  r,c,direction = current
   if direction in (NONE, LEFT, DOWN) and c > 0 and matrix[r][c-1] != '#': 
-    yield ((r,c-1), LEFT) 
+    yield (r,c-1, LEFT) 
   if direction in (NONE, RIGHT, UP) and c < columns-1 and matrix[r][c+1] != '#':  
-    yield ((r,c+1), RIGHT)
+    yield (r,c+1, RIGHT)
   if direction in (NONE, UP, LEFT) and r > 0 and matrix[r-1][c] != '#': 
-    yield ((r-1,c), UP)
+    yield (r-1,c, UP)
   if direction in (NONE, DOWN, RIGHT) and r < rows-1 and matrix[r+1][c] != '#':
-    yield ((r+1,c), DOWN)
+    yield (r+1,c, DOWN)
 
 def a_star(matrix, rows, columns, begin, end):
   '''A* algorithm to accelerate the shortest path search
@@ -41,30 +41,30 @@ def a_star(matrix, rows, columns, begin, end):
   visited = set()
   pending = [(begin[0],begin[1],NONE)]
 
-  g_score[begin] = 0
-  f_score[begin] = g_score[begin] + h(begin, end)
+  g_score[(begin[0],begin[1],NONE)] = 0
+  f_score[(begin[0],begin[1],NONE)] = g_score[(begin[0],begin[1],NONE)] + h(begin, end)
   while len(pending) > 0:
-    minimum = min(pending, key=lambda x:f_score[(x[0],x[1])])
-    current = (minimum[0], minimum[1])
-    direction = minimum[2]
-    if current == end: break
+    current = min(pending, key=lambda x:f_score[x])
+    position = (current[0], current[1])
+
+    if position == end: return g_score[current]
  
-    pending.remove(minimum)
-    visited.add((current[0],current[1],direction))
+    pending.remove(current)
+    visited.add(current)
     
-    for neighbor,new_direction in neighbors(matrix, rows, columns, current, direction):
-      if (neighbor[0],neighbor[1],new_direction) in visited: continue
+    for neighbor in neighbors(matrix, rows, columns, current):
+      if neighbor in visited: continue
 
       tmp_g_score = g_score[current]+1
 
       if neighbor not in pending or tmp_g_score < g_score[neighbor]:
+        position = (neighbor[0], neighbor[1])
         g_score[neighbor] = tmp_g_score
-        f_score[neighbor] = g_score[neighbor] + h(neighbor, end)
+        f_score[neighbor] = g_score[neighbor] + h(position, end)
         if neighbor not in pending: 
-          pending.append((neighbor[0],neighbor[1],new_direction))
+          pending.append(neighbor)
 
-  if end in g_score: return g_score[end]
-  else: return 'ERROR'
+  return 'ERROR'
 
 def read_graph():
   '''read_graph() -> matrix, M,N, begin, end
